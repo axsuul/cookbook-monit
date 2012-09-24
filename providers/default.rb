@@ -37,7 +37,7 @@ build_template_variables = lambda do |new_resource|
   # If no stop command is given but a pidfile has been provided, 
   # we will use a SIGTERM by default
   if !new_resource.stop and new_resource.pidfile
-    variables[:stop] = "kill -s SIGTERM `cat #{new_resource.pidfile}`"
+    variables[:stop] = "/bin/kill -s SIGTERM `cat #{new_resource.pidfile}`"
   else
     variables[:stop] = new_resource.stop
   end
