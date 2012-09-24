@@ -18,8 +18,6 @@
 # limitations under the License.
 #
 
-require 'chef/resource'
-
 actions :enable, :disable
 default_action :enable
 
