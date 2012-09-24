@@ -51,8 +51,6 @@ build_template_variables = lambda do |new_resource|
 end
 
 action :enable do
-  log @new_resource.inspect
-
   template config_path.call(new_resource) do
     source "monit.conf.erb"
     owner "root"

@@ -1,6 +1,7 @@
+# Dropped off by Chef!
 check process <%= @process %> <%= @check_with %>
     start program = "<%= @start %>"
         <%= @run_as if @run_as %>
     stop program = "<%= @stop %>"
         <%= @run_as if @run_as%>
-    <% @conditions.each { |c| puts c } %>
+    <%= @conditions.join("\n") %>

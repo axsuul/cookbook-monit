@@ -18,6 +18,8 @@
 # limitations under the License.
 #
 
+require 'chef/resource'
+
 actions :enable, :disable
 default_action :enable
 
@@ -28,11 +30,4 @@ attribute :start, :kind_of => String, :required => true
 attribute :stop, :kind_of => String
 attribute :uid, :kind_of => [Integer, String], :default => "root"
 attribute :gid, :kind_of => [Integer, String]
-
-def conditions(*conditions)
-  @conditions = conditions
-end
-
-def conditions
-  @conditions || []
-end
+attribute :conditions, :kind_of => Array, :default => []

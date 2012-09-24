@@ -7,7 +7,7 @@ default['monit']['httpd_enabled']       = true
 default['monit']['httpd_port']          = 3737
 default['monit']['httpd_password']      = "password"
 
-default['monit']['mail_server']         = "localhost"
+default['monit']['mail_server']         = nil
 default['monit']['mail_format_subject'] = "$SERVICE $EVENT"
 default['monit']['mail_format_from']    = "monit@example.com"
 default['monit']['mail_format_message'] = <<-EOS
