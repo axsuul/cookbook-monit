@@ -1,0 +1,25 @@
+# Dropped off by Chef, any changes will be overwritten!
+set daemon <%= node['monit']['poll_period'] %>
+    with start delay <%= node['monit']['poll_start_delay'] %>
+
+set logfile <%= node['monit']['logfile'] %>
+
+set mailserver <%= node['monit']['mail_server'] %>
+set mail-format { 
+    from: <%= node['monit']['mail_format_from'] %>
+    subject: <%= node['monit']['mail_format_subject'] %>
+    message: <%= node['monit']['mail_format_message'] %>
+}
+
+set eventqueue
+    basedir /var/monit  # set the base directory where events will be stored
+#    slots 1000          # optionaly limit the queue size
+
+set alert <%= node['monit']['notify_email'] %> NOT ON { action, instance, pid, ppid }
+
+<% if node['monit']['httpd_enabled'] %>
+set httpd port <%= node['monit']['httpd_port'] %>
+    allow admin:"<%= node['monit']['httpd_password'] %>"
+<% end %>
+
+include /etc/monit/conf.d/*.conf
