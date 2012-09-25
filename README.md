@@ -31,7 +31,7 @@ Recipes
 default
 -------
 
-Installs `monit` as a service using the package manager and drops off a `monitrc`. Make sure to check out the default attributes file!
+Installs monit as a service using the package manager and drops off a `monitrc` configuration file. Make sure to check out the default attributes file!
 
 Usage
 =====
@@ -55,14 +55,12 @@ monit "postgresql" do
 end
 ```
 
-Here's a little more complicated one
-
+What happens if you want to run the process as a user? The `monit` resource provides a helper attribute `as` and will load that user's environment while running the `start` and `stop` commands. 
 ```ruby
 monit "sidekiq" do
   pidfile "/app/pids/sidekiq.pid"
   start "/app/bin/sidekiq --pidfile /app/pids/sidekiq.pid"
-  uid "deployer"
-  gid "admin"
+  as "deployer"
   conditions [
     "if mem > 256 MB for 1 cycles then restart",
     "if cpu > 90% for 5 cycles then restart",
@@ -71,7 +69,18 @@ monit "sidekiq" do
 end    
 ```
 
-Notice that `stop` is not set. If `stop` is not set, the provider will use a `SIGTERM` to kill the `pid`. 
+You still have the option to run the commands directly as the user (without environment) with `uid` and `gid`, although most likely you will want to use `as`.
+
+```ruby
+monit "sidekiq" do
+  ...
+  uid "deployer"
+  gid "admin"
+  ...
+end    
+```
+
+Notice that in the above example, `stop` is not set. If `stop` is not set, the provider will use a `SIGTERM` to kill the pid in the `pidfile`. 
 
 License
 =======

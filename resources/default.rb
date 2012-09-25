@@ -26,6 +26,7 @@ attribute :pidfile, :kind_of => String
 attribute :matching, :kind_of => String
 attribute :start, :kind_of => String, :required => true
 attribute :stop, :kind_of => String
+attribute :as, :kind_of => String
 attribute :uid, :kind_of => [Integer, String], :default => "root"
 attribute :gid, :kind_of => [Integer, String]
 attribute :conditions, :kind_of => Array, :default => []
