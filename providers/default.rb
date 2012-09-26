@@ -23,7 +23,7 @@ build_template_variables = lambda do |new_resource|
   # If we want to run the command within user's environment and shell, 
   # we need to switch to the user before executing the command
   wrap_command = lambda do |command|
-    command = "/bin/su - #{new_resource.as} -c '#{command}'" if new_resource.as
+    command = "/bin/su - #{new_resource.as} -c -i '#{command}'" if new_resource.as
 
     command
   end
