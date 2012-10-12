@@ -28,6 +28,8 @@ but older and newer platforms should work just fine.
 Recipes
 =======
 
+Some monit configuration recipes have been provided for some popular services.
+
 default
 -------
 

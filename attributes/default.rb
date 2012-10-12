@@ -1,3 +1,5 @@
+default['monit']['startup']             = true
+
 default['monit']['poll_period']         = 30
 default['monit']['poll_start_delay']    = 0
 default['monit']['logfile']             = "/var/log/monit.log"
