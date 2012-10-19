@@ -84,6 +84,15 @@ end
 
 Notice that in the above example, `stop` is not set. If `stop` is not set, the provider will use a `SIGTERM` to kill the pid in the `pidfile`. 
 
+**No pidfile?**. No worries bro!
+
+```ruby
+monit "varnish" do
+  matching "varnishd"
+  ...
+end
+```
+
 License
 =======
 
