@@ -38,7 +38,7 @@ build_template_variables = lambda do |new_resource|
   else
     # Match the process name if pidfile isn't provided, unless matching
     # has been explicity specified
-    matching = new_resource.process unless new_resource.matching
+    matching = new_resource.matching || new_resource.process 
     variables[:check_with] = "matching #{matching}"
   end
 
