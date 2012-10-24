@@ -1,7 +1,7 @@
 Description
 ===========
 
-Provides a set of primitives for managing monit and associated monit configurations.
+Provides a set of primitives for managing monit and monit configurations.
 
 PLEASE NOTE - The resource/providers in this cookbook are under heavy development.
 An attempt is being made to keep the resource simple/stupid by starting with less
@@ -25,10 +25,18 @@ Tested on
 
 but older and newer platforms should work just fine.
 
+Installation
+============
+[Librarian](https://github.com/applicationsonline/librarian) is recommended to install this cookbook. In fact, it's recommended to install all your cookbooks! Within your `Cheffile`
+
+```ruby
+cookbook 'monit', git: 'https://github.com/axsuul/cookbook-monit'
+```
+
 Recipes
 =======
 
-Some monit configuration recipes have been provided for some popular services.
+Some monit configuration recipes have also been provided for some popular services.
 
 default
 -------
@@ -52,12 +60,12 @@ Default action is `:enable`. You can disable by doing
 
 ```ruby
 monit "postgresql" do
-    ...
+    # ...
     action :disable
 end
 ```
 
-What happens if you want to run the process as a user? The `monit` resource provides a helper attribute `as` and will load that user's environment while running the `start` and `stop` commands. 
+What happens if you want to run the process as a user? The `monit` resource provides a helper attribute `as` and will load that user's environment while running the `start` and `stop` commands.
 ```ruby
 monit "sidekiq" do
   pidfile "/app/pids/sidekiq.pid"
@@ -68,28 +76,27 @@ monit "sidekiq" do
     "if cpu > 90% for 5 cycles then restart",
     "if 5 restarts within 5 cycles then timeout"
   ]
-end    
+end
 ```
 
 You still have the option to run the commands directly as the user (without environment) with `uid` and `gid`, although most likely you will want to use `as`.
 
 ```ruby
 monit "sidekiq" do
-  ...
   uid "deployer"
   gid "admin"
-  ...
-end    
+  # ...
+end
 ```
 
-Notice that in the above example, `stop` is not set. If `stop` is not set, the provider will use a `SIGTERM` to kill the pid in the `pidfile`. 
+Notice that in the above example, `stop` is not set. If `stop` is not set, the provider will use a `SIGTERM` to kill the pid in the `pidfile`.
 
 **No pidfile?**. No worries bro!
 
 ```ruby
 monit "varnish" do
   matching "varnishd"
-  ...
+  # ...
 end
 ```
 
