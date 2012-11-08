@@ -83,6 +83,7 @@ You still have the option to run the commands directly as the user (without envi
 
 ```ruby
 monit "sidekiq" do
+  pidfile "/app/pids/sidekiq.pid"
   uid "deployer"
   gid "admin"
   # ...
