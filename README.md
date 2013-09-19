@@ -104,7 +104,7 @@ end
 License
 =======
 
-Author:: James Hu (<axsuul@gmail.com>)
+Author:: James Hu (<hello@james.hu>)
 
 Copyright:: Copyright (c) 2012, James Hu
 
