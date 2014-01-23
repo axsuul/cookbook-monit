@@ -3,11 +3,6 @@ Description
 
 Provides a set of primitives for managing monit and monit configurations.
 
-PLEASE NOTE - The resource/providers in this cookbook are under heavy development.
-An attempt is being made to keep the resource simple/stupid by starting with less
-sophisticated firewall implementations first and refactor/vet the resource definition
-with each successive provider.
-
 Requirements
 ============
 
