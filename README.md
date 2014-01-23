@@ -8,7 +8,7 @@ Requirements
 
 Chef
 ----
-Tested on `0.10.10` but newer versions should work just fine.
+Tested on Chef `0.10.x` and `0.11.x`.
 
 Platform
 --------
