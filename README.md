@@ -101,6 +101,11 @@ monit "varnish" do
 end
 ```
 
+Contributing
+============
+
+I love pull requests!
+
 License
 =======
 
