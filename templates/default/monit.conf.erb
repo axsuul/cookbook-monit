@@ -1,7 +1,9 @@
 # Dropped off by Chef!
 check process <%= @process %> <%= @check_with %>
-    start program = "<%= @start %>"
-        <%= @run_as if @run_as %>
+    <% if @start %>
+      start program = "<%= @start %>"
+          <%= @run_as if @run_as %>
+    <% end %>
     stop program = "<%= @stop %>"
         <%= @run_as if @run_as%>
     <%= @conditions.join("\n") %>

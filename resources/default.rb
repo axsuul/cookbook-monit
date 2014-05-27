@@ -24,7 +24,7 @@ default_action :enable
 attribute :process, :kind_of => String, :name_attribute => :true
 attribute :pidfile, :kind_of => String
 attribute :matching, :kind_of => String
-attribute :start, :kind_of => String, :required => true
+attribute :start, :kind_of => String
 attribute :stop, :kind_of => String
 attribute :as, :kind_of => String
 attribute :uid, :kind_of => [Integer, String], :default => "root"
