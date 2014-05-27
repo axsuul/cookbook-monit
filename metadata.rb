@@ -1,3 +1,4 @@
+name             "monit"
 maintainer       "James Hu"
 maintainer_email "axsuul@gmail.com"
 license          "Apache 2.0"
