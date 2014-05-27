@@ -1,5 +1,5 @@
 #
-# Author:: James Hu (<axsuul@gmail.com>)
+# Author:: James Hu (<hello@james.hu>)
 # Cookbook Name:: monit
 # Resource:: monit
 #

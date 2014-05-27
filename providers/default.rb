@@ -1,5 +1,5 @@
 #
-# Author:: James Hu (<axsuul@gmail.com>)
+# Author:: James Hu (<hello@james.hu>)
 # Cookbook Name:: monit
 # Provider:: monit
 #
@@ -38,7 +38,7 @@ build_template_variables = lambda do |new_resource|
   else
     # Match the process name if pidfile isn't provided, unless matching
     # has been explicity specified
-    matching = new_resource.matching || new_resource.process 
+    matching = new_resource.matching || new_resource.process
     variables[:check_with] = "matching #{matching}"
   end
 

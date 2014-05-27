@@ -1,6 +1,6 @@
 name             "monit"
 maintainer       "James Hu"
-maintainer_email "axsuul@gmail.com"
+maintainer_email "hello@james.hu"
 license          "Apache 2.0"
 description      "Provides recipes for installing monit and maintaining monit configurations."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
