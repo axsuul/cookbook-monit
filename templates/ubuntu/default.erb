@@ -4,7 +4,7 @@
 # Stefan Alfredsson <alfs@debian.org>
 
 # You must set this variable to for monit to start
-startup=<%= node['monit']['startup'] == true ? "yes" : "no" %>
+START=<%= node['monit']['startup'] == true ? "yes" : "no" %>
 
 # You can change the location of the state file here
 # It can also be set in monitrc
