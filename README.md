@@ -1,4 +1,4 @@
-Description
+cookbook-monit
 ===========
 
 Provides a set of primitives for managing monit and monit configurations.
