@@ -8,7 +8,12 @@ Requirements
 
 Chef
 ----
-Tested on Chef `0.10.x` and `0.11.x`.
+
+Tested on 
+
+* `0.10.x`
+* `0.11.x`
+* `0.12.x`
 
 Platform
 --------
