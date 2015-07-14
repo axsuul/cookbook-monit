@@ -112,7 +112,7 @@ License
 
 Author:: James Hu (<hello@james.hu>)
 
-Copyright:: Copyright (c) 2012, James Hu
+Copyright:: Copyright (c) 2015, James Hu
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
