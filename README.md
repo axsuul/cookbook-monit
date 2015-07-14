@@ -28,7 +28,7 @@ but older and newer platforms should work just fine.
 
 Installation
 ============
-[Librarian](https://github.com/applicationsonline/librarian) is recommended to install this cookbook. In fact, it's recommended to install all your cookbooks! Within your `Cheffile`
+[Berkshelf](http://berkshelf.com/) is recommended to install this cookbook. In fact, it's recommended to install all your cookbooks! Within your `Berksfile`
 
 ```ruby
 cookbook 'monit', git: 'https://github.com/axsuul/cookbook-monit'
